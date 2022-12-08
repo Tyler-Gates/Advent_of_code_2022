@@ -68,7 +68,7 @@ function findVisibleTrees(input) {
     console.log("The total number of visible trees is: " + total);
 }
 function findScenicScore(input) {
-    var totals = [];
+    var highest = 0;
     //iterates top down
     for (var i = 1; i < input.length - 1; i++) {
         //iterates left to right
@@ -105,11 +105,12 @@ function findScenicScore(input) {
                     break;
                 }
             }
-            totals.push((right * left * up * down));
+            if (highest < (right * left * up * down)) {
+                highest = (right * left * up * down);
+            }
         }
     }
-    totals.sort(function (one, two) { return (one > two ? -1 : 1); });
-    console.log("The highest scenic score possible is: " + totals[0]);
+    console.log("The highest scenic score possible is: " + highest);
 }
 var input = ingestFile();
 findVisibleTrees(input);

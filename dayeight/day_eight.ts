@@ -71,7 +71,7 @@ function findVisibleTrees(input: string[]) {
 }
 
 function findScenicScore(input: string[]) {
-    var totals: Array<number> = [];
+    var highest = 0;
     //iterates top down
     for (var i = 1; i < input.length - 1; i++) {
         //iterates left to right
@@ -86,37 +86,36 @@ function findScenicScore(input: string[]) {
             }
             //check down
             var down = 0;
-                for (var k = i + 1; k < input.length; k++) {
-                    down++;
-                    if (input[i][j] <= input[k][j]) {
-                        break;
-                    }
+            for (var k = i + 1; k < input.length; k++) {
+                down++;
+                if (input[i][j] <= input[k][j]) {
+                    break;
                 }
+            }
             
             //check left
             var left = 0;
-                for (var k = j - 1; k >= 0; k--) {
-                    left++;
-                    if (input[i][j] <= input[i][k]) {
-                        break;
-                    }
+            for (var k = j - 1; k >= 0; k--) {
+                left++;
+                if (input[i][j] <= input[i][k]) {
+                    break;
                 }
+            }
             
             //check right
             var right = 0;
-                for (var k = j + 1; k < input[i].length; k++) {
-                    right++;
-                    if (input[i][j] <= input[i][k]) {
-                        break;
-                    }
+            for (var k = j + 1; k < input[i].length; k++) {
+                right++;
+                if (input[i][j] <= input[i][k]) {
+                    break;
                 }
-            totals.push( (right * left * up * down) );
+            }
+            if (highest < (right * left * up * down)) {
+                highest = (right * left * up * down);
+            }
         }
     }
-    totals.sort((one, two) => (one > two ? -1 : 1));
-    console.log("The highest scenic score possible is: " + totals[0]);
-
-
+    console.log("The highest scenic score possible is: " + highest);
 }
 
 
