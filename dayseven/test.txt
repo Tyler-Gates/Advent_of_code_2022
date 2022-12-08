@@ -1,0 +1,10 @@
+$ ls
+dir 1
+1 hi.tx
+$ cd 1
+$ ls
+3 h.txt
+dir 2
+$ cd 2
+2 hh.txt
+2 hhh.txt
