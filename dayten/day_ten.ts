@@ -45,10 +45,10 @@ function createImage(input: string[]) {
             ticks++
             //check
             if (ticks >= sprite - 1 && ticks <= sprite + 1) {
-                currentLine = currentLine.concat("#");
+                currentLine +=  "#";
             }
             else {
-                currentLine = currentLine.concat('.');
+                currentLine += '.';
             }
             if (ticks % 40 == 0) {
                 mystery.push(currentLine)
@@ -60,10 +60,10 @@ function createImage(input: string[]) {
             ticks++
             //check
             if (ticks >= sprite - 1 && ticks <= sprite + 1) {
-                currentLine = currentLine.concat("#");
+                currentLine +=  "#";
             }
             else {
-                currentLine = currentLine.concat('.');
+                currentLine += '.';
             }
             if (ticks % 40 == 0) {
                 mystery.push(currentLine)
@@ -73,10 +73,10 @@ function createImage(input: string[]) {
             ticks++
             //check
             if (ticks >= sprite - 1 && ticks <= sprite + 1) {
-                currentLine = currentLine.concat("#");
+                currentLine +=  "#";
             }
             else {
-                currentLine = currentLine.concat('.');
+                currentLine += '.';
             }
             if (ticks % 40 == 0) {
                 mystery.push(currentLine)
